@@ -1,5 +1,27 @@
 """Provide the primary functions."""
 
+import numpy as np
+
+
+def calculate_distance(vector_a, vector_b):
+    # This function calculates the distance between two points given as numpy arrays.
+    delta_vector = vector_a - vector_b
+    dist = np.linalg.norm(delta_vector)
+    return dist
+
+
+def build_bond_list(coords, max_bond=1.5, min_bond=0):
+    if min_bond < 0:
+        raise ValueError("Bonds have to be positive")
+    bonds = {}
+    num_atoms = len(coords)
+    for atom1 in range(num_atoms):
+        for atom2 in range(atom1, num_atoms):
+            distance = calculate_distance(coords[atom1], coords[atom2])
+            if min_bond < distance < max_bond:
+                bonds[(atom1, atom2)] = distance
+    return bonds
+
 
 def canvas(with_attribution=True):
     """

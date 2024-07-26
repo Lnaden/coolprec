@@ -15,4 +15,4 @@ Copyright (c) 2024, Levi Naden
 #### Acknowledgements
  
 Project based on the 
-[Computational Molecular Science Python Cookiecutter](https://github.com/molssi/cookiecutter-cms) version 1.1.
+[Computational Molecular Science Python Cookiecutter](https://github.com/molssi/cookiecutter-cms) version 1.10.
